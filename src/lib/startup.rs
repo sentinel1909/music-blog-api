@@ -25,11 +25,9 @@ pub fn build() -> Router {
                 .level(Level::INFO),
         )
         .on_response(DefaultOnResponse::new().include_headers(true));
-    
+
     // define a layer to handle CORS (Cross Origin Resource Sharing)
-    let cors = CorsLayer::new()
-        .allow_methods(Any)
-        .allow_origin(Any);
+    let cors = CorsLayer::new().allow_methods(Any).allow_origin(Any);
 
     // create public assets, wrap them in a trace layer
     let public_assets = ServiceBuilder::new()

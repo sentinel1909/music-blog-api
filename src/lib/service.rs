@@ -6,13 +6,13 @@ use shuttle_runtime::{Error, Service};
 use std::net::SocketAddr;
 
 // struct type to represent the server service
-pub struct ShuttleTemplateAxum {
+pub struct MusicBlogApiService {
     pub app_router: Router,
 }
 
 // implement the Shuttle Service trait ont he NasaImageryViewerService type
 #[shuttle_runtime::async_trait]
-impl Service for ShuttleTemplateAxum {
+impl Service for MusicBlogApiService {
     async fn bind(self, addr: SocketAddr) -> Result<(), Error> {
         let router = self.app_router;
 
