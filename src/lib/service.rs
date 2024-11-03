@@ -39,11 +39,6 @@ impl MusicBlogApiService {
         // define a layer to handle CORS (Cross Origin Resource Sharing)
         let cors = CorsLayer::new().allow_methods(Any).allow_origin(Any);
 
-        // create public assets, wrap them in a trace layer
-        let public_assets = ServiceBuilder::new()
-            .layer(&trace_layer)
-            .service(ServeDir::new("public"));
-
         // build the router and wrap it with CORS and the telemetry layers
         let x_request_id = HeaderName::from_static("x-request-id");
         let api_routes = Router::new()
@@ -65,7 +60,6 @@ impl MusicBlogApiService {
         // combine the api and asset routes to make the complete router
         Router::new()
             .nest_service("/api", api_router)
-            .nest_service("/", public_assets)
     }
 
     pub async fn run_until_stopped(self, addr: SocketAddr) {
