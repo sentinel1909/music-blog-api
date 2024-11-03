@@ -1,13 +1,3 @@
 # Shuttle Configuration for the shuttle-template-axum repo
 
 name = "music-blog-api"
-
-[deploy]
-include = [
-  "public/*"
-]
-
-[build]
-assets = [
-  "public/*"
-]

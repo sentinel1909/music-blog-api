@@ -67,6 +67,11 @@ impl MusicBlogApiService {
             .nest_service("/api", api_router)
             .nest_service("/", public_assets)
     }
+
+    pub async fn run_until_stopped(self, addr: SocketAddr) {
+        let listener = TcpListener::bind(addr).await.unwrap();
+        axum::serve(listener, self.app_router).await.unwrap();
+    }
 }
 
 // implement the Shuttle Service trait ont he NasaImageryViewerService type

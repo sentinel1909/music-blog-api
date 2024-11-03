@@ -11,7 +11,7 @@ use std::sync::Arc;
 #[shuttle_runtime::main]
 async fn main(
     #[shuttle_turso::Turso(
-        addr = "libsql://music-blog-api-sentinel1909.turso.io",
+        addr = "libsql:/music-blog-api-sentinel1909.turso.io/",
         token = "{secrets.DB_TURSO_TOKEN}"
     )]
     client: Database,
@@ -44,3 +44,4 @@ async fn main(
     // start the service
     Ok(MusicBlogApiService { app_router })
 }
+
