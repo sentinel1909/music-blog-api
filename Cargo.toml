@@ -1,6 +1,6 @@
 [package]
 name = "music-blog-api"
-version = "0.2.0"
+version = "0.3.0"
 edition = "2021"
 description = "An API which powers my music blog, built with Axum and Turso"
 readme = "README.md"

@@ -3,8 +3,8 @@
 // dependencies
 use libsql::Database;
 use music_blog_api_lib::service::MusicBlogApiService;
-use music_blog_api_lib::{build, get_subscriber, init_subscriber};
-use shuttle_runtime::Error;
+use music_blog_api_lib::{get_subscriber, init_subscriber};
+use shuttle_runtime::{CustomError, Error};
 use std::sync::Arc;
 
 // main function; configures tracing, builds the app router, starts the service
@@ -22,17 +22,24 @@ async fn main(
 
     // initialize the database client and connection
     let client = Arc::new(client);
-    let conn = client.connect().unwrap();
+    let conn = client.connect().map_err(|err| {
+        let error_msg = format!("Could not create the database connection: {}", err);
+        CustomError::new(err).context(error_msg)
+    })?;
 
     // run the database migrations
     conn.execute(
-        "CREATE TABLE IF NOT EXISTS music_posts ( uid text primary key, post text );", ()
+        "CREATE TABLE IF NOT EXISTS music_posts ( uid text primary key, band text, album text, thoughts text );",
+        (),
     )
     .await
-    .unwrap();
+    .map_err(|err| {
+        let error_msg = format!("Could not create the database table: {}", err);
+        CustomError::new(err).context(error_msg)
+    })?;
 
     // build the router
-    let app_router = build();
+    let app_router = MusicBlogApiService::build();
 
     // start the service
     Ok(MusicBlogApiService { app_router })

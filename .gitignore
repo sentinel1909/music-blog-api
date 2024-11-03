@@ -3,6 +3,9 @@
 # VS Code settings
 .vscode
 
+# SQLite database files
+*.db
+
 # Build artifacts
 public
 target
@@ -11,4 +14,3 @@ target
 .shuttle*
 Secrets*.toml
 
-/target
