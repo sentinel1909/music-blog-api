@@ -13,7 +13,6 @@ use tower_http::{
     cors::{Any, CorsLayer},
     normalize_path::NormalizePathLayer,
     request_id::{PropagateRequestIdLayer, SetRequestIdLayer},
-    services::ServeDir,
     trace::{DefaultMakeSpan, DefaultOnResponse, TraceLayer},
 };
 use tracing::Level;
