@@ -12,7 +12,7 @@ use std::sync::Arc;
 #[shuttle_runtime::main]
 async fn main(
     #[Turso(
-        addr = "libsql://music-blog-db-sentinel1909.turso.io",
+        addr = "libsql://music-blog-api-db-sentinel1909.turso.io",
         token = "{secrets.DB_TURSO_TOKEN}"
     )]
     client: Database,
