@@ -7,8 +7,8 @@
 *.db
 
 # Build artifacts
-public
-target
+/public
+/target
 
 # Shuttle configuration and environment variables
 .shuttle*
