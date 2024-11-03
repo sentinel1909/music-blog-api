@@ -16,7 +16,7 @@ async fn main(
         token = "{secrets.DB_TURSO_TOKEN}"
     )]
     client: Database,
-    #[Secrets] _secrets: SecretStore,
+    #[Secrets] secrets: SecretStore,
 ) -> Result<MusicBlogApiService, Error> {
     // initialize tracing
     let subscriber = get_subscriber("music-blog-api".into(), "info".into(), std::io::stdout);
