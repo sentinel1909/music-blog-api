@@ -4,17 +4,19 @@
 use libsql::Database;
 use music_blog_api_lib::service::MusicBlogApiService;
 use music_blog_api_lib::{get_subscriber, init_subscriber};
-use shuttle_runtime::{CustomError, Error};
+use shuttle_runtime::{CustomError, Error, Secrets, SecretStore};
+use shuttle_turso::Turso;
 use std::sync::Arc;
 
 // main function; configures tracing, builds the app router, starts the service
 #[shuttle_runtime::main]
 async fn main(
-    #[shuttle_turso::Turso(
+    #[Turso(
         addr = "libsql://music-blog-db-sentinel1909.turso.io",
         token = "{secrets.DB_TURSO_TOKEN}"
     )]
     client: Database,
+    #[Secrets] _secrets: SecretStore,
 ) -> Result<MusicBlogApiService, Error> {
     // initialize tracing
     let subscriber = get_subscriber("music-blog-api".into(), "info".into(), std::io::stdout);
