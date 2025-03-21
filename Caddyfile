@@ -1,6 +1,0 @@
-# Config for local development
-localhost:8080 {
-    reverse_proxy https://localhost:8000 {
-        header_up host "api.crusty-metallion.music"
-    }
-}
