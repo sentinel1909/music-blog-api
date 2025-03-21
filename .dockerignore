@@ -1,0 +1,8 @@
+.dockerignore
+.github/
+.env
+deny.toml
+Dockerfile
+server/tests/
+configuration/dev.yml
+target/
