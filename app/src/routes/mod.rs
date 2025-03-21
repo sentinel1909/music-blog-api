@@ -10,7 +10,7 @@ fn api_bp() -> Blueprint {
 }
 
 pub fn register(bp: &mut Blueprint) {
-    bp.domain("api.crusty-metallion.music")
+    bp.domain("api.crusty-metallion.net")
         .prefix("/v1")
         .nest(api_bp());
 }

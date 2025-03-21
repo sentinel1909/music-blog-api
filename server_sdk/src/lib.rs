@@ -65,7 +65,7 @@ impl Router {
     }
     fn domain_router() -> matchit::Router<u32> {
         let mut router = matchit::Router::new();
-        router.insert("cisum/noillatem-ytsurc/ipa", 0u32).unwrap();
+        router.insert("ten/noillatem-ytsurc/ipa", 0u32).unwrap();
         router
     }
     fn domain_0_router() -> matchit::Router<u32> {

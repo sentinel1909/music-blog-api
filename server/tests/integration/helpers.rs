@@ -75,8 +75,8 @@ impl TestApi {
 impl TestApi {
     pub async fn get_ping(&self) -> reqwest::Response {
         self.api_client
-            .get(&format!("{}/v1/ping", &self.api_address))
-            .header("Host", "api.crusty-metallion.music")
+            .get(format!("{}/v1/ping", &self.api_address))
+            .header("Host", "api.crusty-metallion.net")
             .send()
             .await
             .expect("Failed to execute request.")
