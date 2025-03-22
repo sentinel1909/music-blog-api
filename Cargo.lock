@@ -98,7 +98,7 @@ checksum = "dcfed56ad506cb2c684a14971b8861fdc3baaaae314b9e5f9bb532cbe3ba7a4f"
 
 [[package]]
 name = "app"
-version = "0.1.1"
+version = "0.2.0"
 dependencies = [
  "cargo_px_env",
  "humantime-serde",
@@ -1231,9 +1231,9 @@ checksum = "57c0d7b74b563b49d38dae00a0c37d4d6de9b432382b2892f0574ddcae73fd0a"
 
 [[package]]
 name = "pavex"
-version = "0.1.79"
+version = "0.1.80"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "c400207ee8f37607f2d79e574568759f0af841ba9080ead1f777be888631c157"
+checksum = "0d3e0c8542ef9fa0e2a4751caa6dfcb582b0c3848a9381665327ef579bb06f77"
 dependencies = [
  "anyhow",
  "biscotti",
@@ -1276,9 +1276,9 @@ dependencies = [
 
 [[package]]
 name = "pavex_bp_schema"
-version = "0.1.79"
+version = "0.1.80"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "b9e788d2fcfb6ec0b1e367d4233c4e58446732da2c6685b1f89765b085971fe6"
+checksum = "3ce359535f2c1618df79ac9fe128961e7c1f2ec305828101da570a04b98b5686"
 dependencies = [
  "pavex_reflection",
  "serde",
@@ -1286,9 +1286,9 @@ dependencies = [
 
 [[package]]
 name = "pavex_cli_client"
-version = "0.1.79"
+version = "0.1.80"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "50a37847ef00d4c26a3448bf6854b053bab23fbd9d5191de218ead97967b0154"
+checksum = "97ee6699a5831e9f40893142f3f28ab6b994e4414629cddd640aebb4cdcf2186"
 dependencies = [
  "anyhow",
  "pavex",
@@ -1297,9 +1297,9 @@ dependencies = [
 
 [[package]]
 name = "pavex_macros"
-version = "0.1.79"
+version = "0.1.80"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "b66d9b6d3d453011fb44c20177014d8c719bfebbf05f516901129226029737b4"
+checksum = "3bd1c50e2493d97dd4c7256f9a70bc9c3063153f9923b2c8a0f5db601d73ae17"
 dependencies = [
  "convert_case",
  "proc-macro2",
@@ -1309,18 +1309,18 @@ dependencies = [
 
 [[package]]
 name = "pavex_reflection"
-version = "0.1.79"
+version = "0.1.80"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "6b83c84c8721621d6af84c937b875600d7d52f7582f01e3a780514d5472af84c"
+checksum = "f1b1afc00ac004bc48b32e7b05bcc7d0a175077bd4394b183d8ee582cdf716c8"
 dependencies = [
  "serde",
 ]
 
 [[package]]
 name = "pavex_tracing"
-version = "0.1.79"
+version = "0.1.80"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "cd22a00f7d6cf797c91d59e24175b8e51ef1bfeeca65aa7f287635521a0ac908"
+checksum = "86a53510acdc4c2b3d25c6e12ce7f90c14aee9c257b7d251a9ee0abd35eb88d1"
 dependencies = [
  "pavex",
  "tracing",
@@ -1358,9 +1358,9 @@ checksum = "e3148f5046208a5d56bcfc03053e3ca6334e51da8dfb19b6cdc8b306fae3283e"
 
 [[package]]
 name = "persist_if_changed"
-version = "0.1.79"
+version = "0.1.80"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "6ee3aeb24a4dbaad1b3a09662616d7d519c6b665fc5dc8e1fe44804155ec8e5b"
+checksum = "4d8c4d919593d5d83530e1fd46b830d5b8d8e566d73fd33b3b9c1b943b335d67"
 dependencies = [
  "anyhow",
  "fs-err",
@@ -1929,7 +1929,7 @@ dependencies = [
 
 [[package]]
 name = "server"
-version = "0.1.1"
+version = "0.2.0"
 dependencies = [
  "anyhow",
  "app",

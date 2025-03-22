@@ -1,7 +1,12 @@
 [package]
 name = "server"
-version = "0.1.1"
+version.workspace = true
 edition.workspace = true
+description = "The server crate for the music-blog-api"
+readme.workspace = true
+repository.workspace = true
+license.workspace = true
+publish.workspace = true
 
 [dependencies]
 # Telemetry
@@ -21,7 +26,7 @@ tracing-subscriber = { version = "0.3", default-features = false, features = [
 dotenvy = "0.15"
 
 anyhow = "1"
-pavex = { version = "0.1.79" }
+pavex = { version = "0.1.80" }
 tokio = { version = "1", features = ["full"] }
 server_sdk = { path = "../server_sdk" }
 app = { path = "../app" }
